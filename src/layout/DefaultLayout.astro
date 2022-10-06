@@ -1,0 +1,58 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.bunny.net">
+		<link href="https://fonts.bunny.net/css?family=recursive:400,700" rel="stylesheet">
+		<title>Astro</title>
+		<style>
+			html,body {
+				padding: 0;
+				margin: 0;
+				background-color: #000;
+				color: #eee;
+				font-family: Recursive,sans-serif;
+			}
+		img {
+			max-width: 100%;
+		}
+		main {
+			padding: 2rem;
+			max-width: 65ch;
+			font-size: 1rem;
+			line-height: 1.75;
+		}
+
+		:global(strong) {
+			color: #feb;
+		}
+
+		:global(time) {
+			display: block;
+			color: #bef;
+		}
+
+		@media (min-width: 768px) {
+			main {
+				font-size: 1.25rem;
+				line-height: 1.8;
+			}
+		}
+	</style>
+	</head>
+	<body>
+		<div class="banner">
+		  <img src="/img/sod.jpg">
+		</div>
+		<main>
+		<slot></slot>
+		</main>
+	</body>
+</html>
+

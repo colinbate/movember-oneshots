@@ -2,6 +2,7 @@
 layout: "../layout/DefaultLayout.astro"
 ---
 import LocalDate from '../components/LocalDate.astro';
+import Game from '../components/Game.astro';
 
 # It's that time again!
 
@@ -25,13 +26,17 @@ Most of the times below are flexible to start anywhere from an hour earlier than
 
 If you are interested in joining a game, message me and tell me which one. We will be coordinating the game via Discord so if you are not already on my server, I can send you an invitation. 
 
----
+<Game>
 
 ### Game 1
 
 <LocalDate date="2022-11-05T23:00:00Z" />
 
 This is the maiden voyage, so might be a bit rough, also, the most likely to run over time.
+
+</Game>
+
+<Game alt>
 
 ### Game 2
 
@@ -40,11 +45,19 @@ This is the maiden voyage, so might be a bit rough, also, the most likely to run
 
 This one is a bit more flexible, as I am open to the possibility of doing this either Saturday or Sunday evening.
 
+</Game>
+
+<Game>
+
 ### Game 3
 
 <LocalDate date="2022-11-20T00:00:00Z" />
 
 I'm hoping by this point I have things running like a well oiled machine.
+
+</Game>
+
+<Game alt>
 
 ### Game 4
 
@@ -52,8 +65,9 @@ I'm hoping by this point I have things running like a well oiled machine.
 
 This is the weekend of American Thanksgiving, and last year I found it tricky to find Americans who wanted to take time out. So for my non-American friends, this is a viable option.
 
-[0]: https://ca.movember.com/events/view/id/0Qxp
-
----
+</Game>
 
 If you ended up here and are interested, but don't have a way to get in touch with me, I'm on Discord as `colinbate#9292`.
+
+
+[0]: https://ca.movember.com/events/view/id/0Qxp

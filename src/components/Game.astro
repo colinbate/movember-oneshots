@@ -1,0 +1,39 @@
+---
+const { alt } = Astro.props;
+---
+<div class:list={[alt && 'alt']}>
+<slot></slot>
+</div>
+
+<style>
+div {
+    margin: 0.5rem -1rem;
+    background-color: #18181B;
+}
+
+div > :global(h3) {
+    padding: 1rem;
+}
+
+div > :global(p) {
+    padding: 0 1rem 1rem;
+}
+
+div :global(time) {
+    padding: 0 1rem;
+}
+
+.alt {
+    background-color: #27272a;
+}
+
+@media (min-width: 640px) {
+    div {
+        border-radius: 0.5rem;
+    }
+
+    div > :global(h3) {
+        border-bottom: 1px solid #000;
+    }
+}
+</style>

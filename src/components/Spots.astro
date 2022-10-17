@@ -11,8 +11,13 @@ const tense = remaining !== 1 ? '' : 's';
     .pill {
         padding: 0.25rem 1rem;
         border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
         background-color: #0c4a6e;
         display: inline-block;
+    }
+
+    @media (min-width: 640px) {
+        .pill {
+            border-bottom-left-radius: 0.5rem;
+        }
     }
 </style>

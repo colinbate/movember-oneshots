@@ -2,6 +2,7 @@
 layout: "../layout/DefaultLayout.astro"
 ---
 import LocalDate from '../components/LocalDate.astro';
+import Spots from '../components/Spots.astro';
 import Game from '../components/Game.astro';
 
 # It's that time again!
@@ -46,6 +47,8 @@ If you are interested in joining a game, message me and tell me which one. We wi
 
 This is the maiden voyage, so might be a bit rough, also, the most likely to run over time.
 
+<Spots remaining={4} />
+
 </Game>
 
 <Game alt>
@@ -55,6 +58,8 @@ This is the maiden voyage, so might be a bit rough, also, the most likely to run
 <LocalDate date="2022-11-14T00:00:00Z" />
 
 There seems to be some interest in doing this one on Sunday, so that is when I will have it.
+
+<Spots remaining={1} />
 
 </Game>
 
@@ -66,6 +71,8 @@ There seems to be some interest in doing this one on Sunday, so that is when I w
 
 I'm hoping by this point I have things running like a well oiled machine.
 
+<Spots remaining={2} />
+
 </Game>
 
 <Game alt>
@@ -75,6 +82,8 @@ I'm hoping by this point I have things running like a well oiled machine.
 <LocalDate date="2022-11-24T17:00:00Z" />
 
 This one will be during the week, during the day. It doesn't have to be Thursday, but that is the front runner. It is American Thanksgiving, and last year I found it tricky to find Americans who wanted to take time out. This one is timed more for European timezones.
+
+<Spots remaining={5} />
 
 </Game>
 

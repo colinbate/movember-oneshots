@@ -1,0 +1,18 @@
+---
+const { remaining } = Astro.props;
+const plural = remaining !== 1 ? 's' : '';
+const tense = remaining !== 1 ? '' : 's';
+---
+{remaining > 0
+    ? <div class="pill"><strong>{remaining}</strong> spot{plural} remain{tense}</div>
+    : <div class="pill"><strong>Game is full!</strong></div>
+}
+<style>
+    .pill {
+        padding: 0.25rem 1rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        background-color: #0c4a6e;
+        display: inline-block;
+    }
+</style>

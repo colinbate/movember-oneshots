@@ -1,0 +1,101 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=homemade-apple:400" rel="stylesheet" />
+		<title>Colin's Movember One-Shots</title>
+		<style>
+			html,body {
+				padding: 0;
+				margin: 0;
+				background-image: url('/img/wood-bg-min.jpg');
+                background-color: #a97650;
+                background-size: cover;
+                background-repeat: no-repeat;
+				font-family: 'Homemade Apple', handwriting, serif;
+                height: 100vh;
+			}
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .container {
+                max-width: 60rem;
+                margin: 0.5rem;
+                box-shadow: 0 0.25rem 1rem -0.25rem rgba(0,0,0,0.5);
+                background-image: url('/img/paper.jpg');
+                background-color: #faf5e4;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            main {
+                padding: 1em;
+                max-width: 65ch;
+                font-size: 1rem;
+                line-height: 1.75;
+                color: #111827;
+                position: relative;
+            }
+
+            :global(.abs) {
+                position: absolute;
+            }
+
+            :global(.br) {
+                bottom: 1em;
+                right: 1em;
+                width: 1.5em;
+            }
+
+            :global(.o-30) {
+                opacity: 0.3;
+            }
+
+            @media (min-width: 500px) {
+                .container {
+                    margin: 1rem;
+                }
+                main {
+                    font-size: 1.5rem;
+                }
+            }
+
+            @media (min-width: 750px) {
+                .container {
+                    margin: 1.5rem;
+                }
+                main {
+                    font-size: 2rem;
+                }
+            }
+
+            @media (min-width: 1280px) {
+                .container {
+                    transform: rotate3d(0, 0, 1, 2deg);
+                }
+                main {
+                    font-size: 2.5rem;
+                }
+            }
+			
+	</style>
+	</head>
+	<body>
+	<div class="container">
+		<main>
+		<slot></slot>
+		</main>
+	</div>
+	</body>
+</html>
+

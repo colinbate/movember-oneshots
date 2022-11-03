@@ -5,7 +5,9 @@ const tense = remaining !== 1 ? '' : 's';
 ---
 {remaining > 0
     ? <div class="pill"><strong>{remaining}</strong> spot{plural} remain{tense}</div>
-    : <div class="pill"><strong>Game is full!</strong></div>
+    : (remaining === 0
+        ? <div class="pill"><strong>Game is full!</strong></div>
+        : <div class="pill"><strong>Game cancelled :(</strong></div>)
 }
 <style>
     .pill {

@@ -1,0 +1,145 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.bunny.net">
+		<link href="https://fonts.bunny.net/css?family=recursive:400,700|merriweather:700" rel="stylesheet">
+		<title>Playing With Fire</title>
+		<style>
+			html,body {
+				padding: 0;
+				margin: 0;
+				background-color: #491313;
+				color: #fff;
+				font-family: Recursive, sans-serif;
+				min-height: 100svh;
+			}
+			
+		.container {
+			max-width: 1150px;
+			margin: 0 auto;
+			background-color: #E62646;
+			background-image: url(/img/pwf-bg.webp);
+			box-shadow: 0px 0px 2rem -3px rgba(255,200,200,0.3);
+			height: 100%;
+		}
+		img {
+			max-width: 100%;
+		}
+		main {
+			padding: 1rem;
+			max-width: 65ch;
+			font-size: 1rem;
+			line-height: 1.75;
+			margin: 0 auto 0;
+		}
+
+		.banner {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			align-items: center;
+			margin-bottom: 2rem;
+		}
+
+		.gametitle {
+			font-family: Merriweather;
+			font-weight: 700;
+			font-size: 2rem;
+		}
+
+		.blur {
+			backdrop-filter: blur(4px);
+			background-color: rgba(0,0,0,0.4);
+			margin: 0 -1rem;
+			padding: 1px 1rem;
+		}
+
+		:global(h1), :global(h2), :global(h3) {
+			font-family: Merriweather;
+			font-weight: 700;
+		}
+
+		:global(strong) {
+			color: #FFA9B8;
+		}
+		
+		:global(a) {
+		  color: #88f1f0;
+		}
+
+		:global(hr) {
+			margin: 3rem auto;
+			width: 90%;
+			border: 0;
+			height: 1rem;
+			background-repeat: no-repeat;
+			background-size: 40% 2px, contain, 40% 2px;
+			background-position: left center, center center, right center;
+			background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+				url(/img/fire.svg),
+				linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+		}
+
+		:global(time) {
+			display: block;
+			color: #7dd3fc;
+		}
+
+		:global(nav) {
+			
+		}
+
+		:global(nav) :global(ul) {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		:global(nav) :global(li) {
+			list-style: none;
+		}
+		
+		@media (min-width: 640px) {
+		  main {
+		    padding: 2rem;
+		  }
+		}
+
+		@media (min-width: 768px) {
+			main {
+				font-size: 1.25rem;
+				line-height: 1.8;
+			}
+			.gametitle {
+				font-size: 3rem;
+			}
+			.blur {
+				margin: 0 -2rem;
+				padding: 1px 2rem;
+			}
+		}
+	</style>
+	</head>
+	<body>
+	<div class="container">
+		<main>
+			<div class="banner">
+				<svg xmlns="http://www.w3.org/2000/svg" height="4em" viewBox="0 0 384 512" fill="currentColor"><path d="M180.9 9.7L192 0l11.1 9.7c76.7 67.1 135.2 152.5 170 248.3c7.2 19.9 10.9 41.1 10.9 62.2C384 425.4 297.2 512 192 512S0 425.4 0 320.2C0 299 3.7 277.8 10.9 258c34.8-95.8 93.3-181.2 170-248.3zM56 274.4c-5.3 14.5-8 30.2-8 45.8C48 398.8 113.3 464 192 464s144-65.2 144-143.8c0-15.6-2.7-31.2-8-45.8C299.1 195 252.6 123.3 192 64.7C131.4 123.3 84.9 195 56 274.4zM205.7 160v14.4c0 11.3 4.4 22.2 12.3 30.2l40.3 41.1c19 19.4 29.6 45.5 29.6 72.6V320c0 53-43 96-96 96s-96-43-96-96v-4.6c0-22.3 10.3-43.4 27.9-57.1L137.1 248v50.3c0 20.8 16.9 37.7 37.7 37.7s37.7-16.9 37.7-37.7v-1.5c0-10.2-3.9-19.9-11-27.3l-14.2-14.7c-10.2-10.6-16-24.8-16-39.6c0-17 7.6-33 20.6-43.9L205.7 160z"/></svg>
+				<div class="gametitle">Playing With Fire</div>
+			</div>
+			<div class="blur">
+				<slot></slot>
+			</div>
+		</main>
+	</div>
+	</body>
+</html>
+

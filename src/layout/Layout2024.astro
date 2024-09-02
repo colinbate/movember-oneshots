@@ -9,9 +9,19 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.bunny.net">
-		<link href="https://fonts.bunny.net/css?family=recursive:400,700|merriweather:700|almendra:400" rel="stylesheet">
+		<link href="https://fonts.bunny.net/css?family=recursive:400,700|almendra:400" rel="stylesheet">
 		<title>Mycosia</title>
 		<style>
+			@font-face {
+				font-family: 'Norwester Pro Rounded';
+				font-weight: bold;
+				font-style: normal;
+				font-display: block;
+				src: local('Norwester Pro Rounded'),
+						local('NorwesterPro-Rounded'),
+						url(/font/NorwesterPro-Rounded.woff2)
+						format('woff2');
+			}
 			html,body {
 				padding: 0;
 				margin: 0;
@@ -26,7 +36,7 @@
 			margin: 0 auto;
 			background-color: #A020F0;
 			/* background-image: url(/img/pwf-bg.webp); */
-			box-shadow: 0px 0px 2rem -3px rgba(255,200,200,0.3);
+			box-shadow: 0px 0px 2rem -3px rgba(209, 255, 200, 0.3);
 			height: 100%;
 		}
 		img {
@@ -49,7 +59,7 @@
 		}
 
 		.gametitle {
-			font-family: Merriweather;
+			font-family: "Norwester Pro Rounded";
 			font-weight: 700;
 			font-size: 2rem;
 		}
@@ -67,7 +77,7 @@
 		}
 
 		:global(h1), :global(h2), :global(h3) {
-			font-family: Merriweather;
+			font-family: "Norwester Pro Rounded";
 			font-weight: 700;
 		}
 
@@ -131,7 +141,7 @@
 				line-height: 1.8;
 			}
 			.gametitle {
-				font-size: 3rem;
+				font-size: 5rem;
 			}
 			.blur {
 				margin: 0 -2rem;

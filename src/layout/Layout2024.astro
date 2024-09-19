@@ -128,6 +128,15 @@
 			font-family: 'Almendra', serif;
 			font-size: 1.5rem;
 		}
+
+		:global(.embed-container) {
+			position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
+		}
+		:global(.embed-container) :global(iframe),
+		:global(.embed-container) :global(object),
+		:global(.embed-container) :global(embed) {
+			position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		}
 		
 		@media (min-width: 640px) {
 		  main {

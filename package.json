@@ -1,7 +1,7 @@
 {
   "name": "movember-oneshots",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2024.9.19",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,9 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "1.0.2",
-    "@astrojs/svelte": "4.0.1",
-    "astro": "^3.0.10",
-    "svelte": "4.2.0"
+    "@astrojs/mdx": "3.1.7",
+    "@astrojs/svelte": "5.7.1",
+    "astro": "^4.15.8",
+    "svelte": "4.2.19"
   }
 }

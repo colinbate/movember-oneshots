@@ -1,9 +1,7 @@
 ---
 layout: "../../layout/Layout2024.astro"
 ---
-import LocalDate from '../../components/LocalDate.astro';
-import Spots from '../../components/Spots.astro';
-import Game from '../../components/Game.astro';
+import Sessions from '../../components/Sessions.svelte';
 
 # Movember 2024
 
@@ -59,55 +57,7 @@ By default, the games happen Saturday evening in my timezone (GMT-3/4). However,
 
 The times below are a starting guide and should be displayed in your local browser's time zone.
 
-<Game>
-
-### Game 1
-
-<LocalDate date="2024-11-02T23:00:00Z" />
-
-<Spots remaining={3} />
-
-</Game>
-
-<Game alt>
-
-### Game 2
-
-<LocalDate date="2024-11-10T00:00:00Z" />
-
-<Spots remaining={3} />
-
-</Game>
-
-<Game>
-
-### Game 3
-
-<LocalDate date="2024-11-17T00:00:00Z" />
-
-<Spots remaining={3} />
-
-</Game>
-
-<Game alt>
-
-### Game 4
-
-<LocalDate date="2024-11-24T00:00:00Z" />
-
-<Spots remaining={3} />
-
-</Game>
-
-<Game>
-
-### Game 5
-
-<LocalDate date="2024-12-01T00:00:00Z" />
-
-<Spots remaining={3} />
-
-</Game>
+<Sessions gameId="12vpf5qa8modu0f" client:only="svelte"/>
 
 If you ended up here and are interested, but don't have a way to get in touch with me, I'm on Discord as `colinbate`.
 

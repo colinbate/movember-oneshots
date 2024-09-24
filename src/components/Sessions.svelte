@@ -1,65 +1,62 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Date from "./Date.svelte";
-  import Seats from "./Seats.svelte";
+  import type { ISession } from './sessions';
+  import Session from "./Session.svelte";
 
-type ISession = {
-  id: string;
-  when: string;
-  open_seats: number;
-};
+
 let sessions: ISession[] = [];
-
+let empty = 'Loading games...';
 export let gameId;
 
-const URL = `${import.meta.env.PUBLIC_MOVEMBERAPI}/api/collections/game_session/records?sort=when&filter=game%3D%27${gameId}%27&fields=when,open_seats`;
+const LIST_URL = `${import.meta.env.PUBLIC_MOVEMBERAPI}/api/collections/game_session/records?sort=when&filter=game%3D%27${gameId}%27&fields=id,when,open_seats`;
+const SIGNUP_URL = `${import.meta.env.PUBLIC_MOVEMBERAPI}/player/add`;
 
 onMount(async () => {
-  const res = await fetch(URL);
-  const data = await res.json();
-  sessions = data.items as ISession[];
+  try {
+    const res = await fetch(LIST_URL);
+    const data = await res.json();
+    sessions = data.items as ISession[];
+  } catch (e) {
+    empty = 'Could not access game info.';
+  }
 });
 
+async function signup(ev: CustomEvent<{session: ISession, name: string, setError: (msg: string) => void}>) {
+  const { session, name, setError } = ev.detail;
+  try {
+    const res = await fetch(SIGNUP_URL, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({session: session.id, name}),
+    });
+    const data = await res.text();
+    if (res.status !== 200) {
+      setError(data);
+    } else {
+      setError('');
+    }
+  } catch (e) {
+    setError(e.message || 'Failed to save.');
+  }
+}
 </script>
 <section>
   {#each sessions as session, i}
-  <div class:alt={i % 2 === 1}>
-    <h3>Game {i+1}</h3>
-    <Date date={session.when} />
-    <Seats remaining={session.open_seats} />
-  </div>
+    <Session {session} index={i} on:signup={signup} />
+  {:else}
+    <p class="empty">{empty}</p>
   {/each}
 </section>
 
 <style>
-div {
-    margin: 0.5rem -1rem;
-    background-color: #18181B;
-}
-
-div > h3 {
-    padding: 1rem;
-}
-
-div > :global(p) {
-    padding: 0 1rem 1rem;
-}
-
-div :global(time) {
-    margin: 0 1rem 1rem;
-}
-
-.alt {
-    background-color: #27272a;
-}
-
-@media (min-width: 640px) {
-    div {
-        border-radius: 0.5rem;
-    }
-
-    div > h3 {
-        border-bottom: 1px solid #000;
-    }
+.empty {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
 }
 </style>

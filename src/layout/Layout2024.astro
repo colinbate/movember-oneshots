@@ -1,176 +1,223 @@
 ---
 
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.bunny.net">
-		<link href="https://fonts.bunny.net/css?family=recursive:400,700|almendra:400" rel="stylesheet">
-		<title>Mycosia</title>
-		<style>
-			@font-face {
-				font-family: 'Norwester Pro Rounded';
-				font-weight: bold;
-				font-style: normal;
-				font-display: block;
-				src: local('Norwester Pro Rounded'),
-						local('NorwesterPro-Rounded'),
-						url(/font/NorwesterPro-Rounded.woff2)
-						format('woff2');
-			}
-			html,body {
-				padding: 0;
-				margin: 0;
-				background-color: #5b0f8a;
-				color: #fff;
-				font-family: Recursive, sans-serif;
-				min-height: 100svh;
-			}
-			
-		.container {
-			max-width: 1150px;
-			margin: 0 auto;
-			background-color: #A020F0;
-			/* background-image: url(/img/pwf-bg.webp); */
-			box-shadow: 0px 0px 2rem -3px rgba(209, 255, 200, 0.3);
-			height: 100%;
-		}
-		img {
-			max-width: 100%;
-		}
-		main {
-			padding: 1rem;
-			max-width: 65ch;
-			font-size: 1rem;
-			line-height: 1.75;
-			margin: 0 auto 0;
-		}
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link
+            href="https://fonts.bunny.net/css?family=recursive:400,700|almendra:400"
+            rel="stylesheet"
+        />
+        <title>Mycosia</title>
+        <style>
+            @font-face {
+                font-family: "Norwester Pro Rounded";
+                font-weight: bold;
+                font-style: normal;
+                font-display: block;
+                src:
+                    local("Norwester Pro Rounded"),
+                    local("NorwesterPro-Rounded"),
+                    url(/font/NorwesterPro-Rounded.woff2) format("woff2");
+            }
+            html,
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: #5b0f8a;
+                color: #fff;
+                font-family: Recursive, sans-serif;
+                min-height: 100svh;
+            }
 
-		.banner {
-			display: flex;
-			flex-direction: column;
-			gap: 0;
-			align-items: center;
-			margin-bottom: 2rem;
-		}
+            .container {
+                max-width: 1150px;
+                margin: 0 auto;
+                background-color: #a020f0;
+                /* background-image: url(/img/pwf-bg.webp); */
+                box-shadow: 0px 0px 2rem -3px rgba(209, 255, 200, 0.3);
+                height: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            main {
+                padding: 1rem;
+                max-width: 65ch;
+                font-size: 1rem;
+                line-height: 1.75;
+                margin: 0 auto 0;
+            }
 
-		.gametitle {
-			font-family: "Norwester Pro Rounded";
-			font-weight: 700;
-			font-size: 2rem;
-		}
+            .banner {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
 
-		.blur {
-   -webkit-backdrop-filter: blur(4px);
-			backdrop-filter: blur(4px);
-			background-color: rgba(0,0,0,0.4);
-			margin: 0 -1rem;
-			padding: 1px 1rem;
-		}
+            .gametitle {
+                font-family: "Norwester Pro Rounded";
+                font-weight: 700;
+                font-size: 2rem;
+            }
 
-		.blur :global(img) {
-			max-width: 100%;
-		}
+            .blur {
+                -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px);
+                background-color: rgba(0, 0, 0, 0.4);
+                margin: 0 -1rem;
+                padding: 1px 1rem;
+            }
 
-		:global(h1), :global(h2), :global(h3) {
-			font-family: "Norwester Pro Rounded";
-			font-weight: 700;
-		}
+            .blur :global(img) {
+                max-width: 100%;
+            }
 
-		:global(strong) {
-			color: #FF69B4;
-		}
-		
-		:global(a) {
-		  color: #40E0D0;
-		}
+            :global(h1),
+            :global(h2),
+            :global(h3) {
+                font-family: "Norwester Pro Rounded";
+                font-weight: 700;
+            }
 
-		:global(hr) {
-			margin: 3rem auto;
-			width: 90%;
-			border: 0;
-			height: 1rem;
-			background-repeat: no-repeat;
-			background-size: 40% 2px, contain, 40% 2px;
-			background-position: left center, center center, right center;
-			background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
-				url(/img/island.svg),
-				linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-		}
+            :global(strong) {
+                color: #ff69b4;
+            }
 
-		:global(time) {
-			display: block;
-			color: #7dd3fc;
-		}
+            :global(a) {
+                color: #40e0d0;
+            }
 
-		:global(nav) {
-			
-		}
+            :global(hr) {
+                margin: 3rem auto;
+                width: 90%;
+                border: 0;
+                height: 1rem;
+                background-repeat: no-repeat;
+                background-size:
+                    40% 2px,
+                    contain,
+                    40% 2px;
+                background-position:
+                    left center,
+                    center center,
+                    right center;
+                background-image:
+                    linear-gradient(
+                        90deg,
+                        rgba(255, 255, 255, 0),
+                        rgba(255, 255, 255, 1)
+                    ),
+                    url(/img/island.svg),
+                    linear-gradient(
+                        90deg,
+                        rgba(255, 255, 255, 1),
+                        rgba(255, 255, 255, 0)
+                    );
+            }
 
-		:global(nav) :global(ul) {
-			margin: 0;
-			padding: 0;
-			display: flex;
-			justify-content: space-around;
-		}
+            :global(time) {
+                display: block;
+                color: #7dd3fc;
+            }
 
-		:global(nav) :global(li) {
-			list-style: none;
-		}
+            :global(nav) {
+            }
 
-		:global(blockquote) {
-			background-color: rgba(0,0,0,0.2);
-			padding: 1px 2rem;
-			font-family: 'Almendra', serif;
-			font-size: 1.5rem;
-		}
+            :global(nav) :global(ul) {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-around;
+            }
 
-		:global(.embed-container) {
-			position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
-		}
-		:global(.embed-container) :global(iframe),
-		:global(.embed-container) :global(object),
-		:global(.embed-container) :global(embed) {
-			position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-		}
-		
-		@media (min-width: 640px) {
-		  main {
-		    padding: 2rem;
-		  }
-		}
+            :global(nav) :global(li) {
+                list-style: none;
+            }
 
-		@media (min-width: 768px) {
-			main {
-				font-size: 1.25rem;
-				line-height: 1.8;
-			}
-			.gametitle {
-				font-size: 5rem;
-			}
-			.blur {
-				margin: 0 -2rem;
-				padding: 1px 2rem;
-			}
-		}
-	</style>
-	</head>
-	<body>
-	<div class="container">
-		<main>
-			<div class="banner">
-				<svg xmlns="http://www.w3.org/2000/svg" height="4em" fill="currentColor" viewBox="0 0 512 512"><path class="fa-secondary" opacity=".4" d="M224 352l64 0c1 0 2 0 3 0s2 .1 3 .1c2 .1 3.9 .2 5.9 .4c3.9 .4 7.7 .9 11.5 1.6c11.3-55.9 18.2-146.2-9.9-226.1l-24.7 0c-10 10-20 20-30 30c6.6 43.1 6.9 114.7-22.8 194z"/><path class="fa-primary" d="M108.7 96c2.1 0 4.2-.8 5.7-2.3l24-24c3.1-3.1 8.2-3.1 11.3 0l24 24c.3 .3 .6 .6 1 .8c-1.4 1.3-2.8 2.6-4.1 4c-54.7 54.7-50.8 114.1-32.3 145.7c4.5 7.6 14.7 7.6 21 1.4L276.8 128l103.9 0c2.1 0 4.2-.8 5.7-2.3l24-24c3.1-3.1 8.2-3.1 11.3 0l24 24c1.5 1.5 3.5 2.3 5.7 2.3l44.7 0c8.8 0 16.1-7.2 13.8-15.8C500.6 76.8 461.4 32 384 32c-33.8 0-60.4 8.6-80.3 21.2C285.2 25.5 248.6 0 190.2 0C112.8 0 73.6 44.8 64.4 80.2C62.2 88.8 69.4 96 78.2 96l30.4 0zM160 352C89.3 352 32 409.3 32 480c0 17.7 14.3 32 32 32l320 0c17.7 0 32-14.3 32-32c0-70.7-57.3-128-128-128l-128 0z"/></svg>
-				<div class="gametitle">Mycosia</div>
-			</div>
-			<div class="blur">
-				<slot></slot>
-			</div>
-		</main>
-	</div>
-	</body>
+            :global(blockquote) {
+                background-color: rgba(0, 0, 0, 0.2);
+                padding: 1px 2rem;
+                font-family: "Almendra", serif;
+                font-size: 1.5rem;
+            }
+
+            :global(.embed-container) {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                max-width: 100%;
+            }
+            :global(.embed-container) :global(iframe),
+            :global(.embed-container) :global(object),
+            :global(.embed-container) :global(embed) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            :global(.thanks) {
+                padding: 1px 1.5rem;
+                border-radius: 0.5rem;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            @media (min-width: 640px) {
+                main {
+                    padding: 2rem;
+                }
+            }
+
+            @media (min-width: 768px) {
+                main {
+                    font-size: 1.25rem;
+                    line-height: 1.8;
+                }
+                .gametitle {
+                    font-size: 5rem;
+                }
+                .blur {
+                    margin: 0 -2rem;
+                    padding: 1px 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <main>
+                <div class="banner">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="4em"
+                        fill="currentColor"
+                        viewBox="0 0 512 512"
+                        ><path
+                            class="fa-secondary"
+                            opacity=".4"
+                            d="M224 352l64 0c1 0 2 0 3 0s2 .1 3 .1c2 .1 3.9 .2 5.9 .4c3.9 .4 7.7 .9 11.5 1.6c11.3-55.9 18.2-146.2-9.9-226.1l-24.7 0c-10 10-20 20-30 30c6.6 43.1 6.9 114.7-22.8 194z"
+                        ></path><path
+                            class="fa-primary"
+                            d="M108.7 96c2.1 0 4.2-.8 5.7-2.3l24-24c3.1-3.1 8.2-3.1 11.3 0l24 24c.3 .3 .6 .6 1 .8c-1.4 1.3-2.8 2.6-4.1 4c-54.7 54.7-50.8 114.1-32.3 145.7c4.5 7.6 14.7 7.6 21 1.4L276.8 128l103.9 0c2.1 0 4.2-.8 5.7-2.3l24-24c3.1-3.1 8.2-3.1 11.3 0l24 24c1.5 1.5 3.5 2.3 5.7 2.3l44.7 0c8.8 0 16.1-7.2 13.8-15.8C500.6 76.8 461.4 32 384 32c-33.8 0-60.4 8.6-80.3 21.2C285.2 25.5 248.6 0 190.2 0C112.8 0 73.6 44.8 64.4 80.2C62.2 88.8 69.4 96 78.2 96l30.4 0zM160 352C89.3 352 32 409.3 32 480c0 17.7 14.3 32 32 32l320 0c17.7 0 32-14.3 32-32c0-70.7-57.3-128-128-128l-128 0z"
+                        ></path></svg
+                    >
+                    <div class="gametitle">Mycosia</div>
+                </div>
+                <div class="blur">
+                    <slot />
+                </div>
+            </main>
+        </div>
+    </body>
 </html>
-

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Date from "./Date.svelte";
+    import DateComp from "./Date.svelte";
     import Seats from "./Seats.svelte";
     import type { ISession } from "./sessions";
     import { fly } from "svelte/transition";
@@ -23,6 +23,10 @@
     let name = $state("");
     let emsg = $state("");
 
+    let ispast = $derived(
+        new Date(session.when).getTime() < new Date().getTime(),
+    );
+
     function cancel() {
         showForm = false;
         name = "";
@@ -43,7 +47,7 @@
     <div class="top">
         <h3>Game {index + 1}</h3>
         <div class="buttons">
-            {#if session.open_seats > 0}
+            {#if session.open_seats > 0 && !ispast}
                 <button
                     type="button"
                     class="signupbtn"
@@ -104,10 +108,10 @@
                     </form>
                 {/if}
             {/if}
-            <Seats remaining={session.open_seats} />
+            <Seats remaining={session.open_seats} {ispast} />
         </div>
     </div>
-    <Date date={session.when} />
+    <DateComp date={session.when} />
 </article>
 
 <style>

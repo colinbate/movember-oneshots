@@ -313,15 +313,13 @@ const description =
             }
 
             .intro-grid,
-            .prep-grid,
-            .date-grid {
+            .prep-grid {
                 display: grid;
                 gap: 2rem;
             }
 
             .donation-card,
-            .system-card,
-            .pending-card {
+            .system-card {
                 padding: 1.35rem;
                 border: var(--line);
                 background: var(--slime);
@@ -330,8 +328,7 @@ const description =
             }
 
             .donation-card p,
-            .system-card p,
-            .pending-card p {
+            .system-card p {
                 margin-top: 0;
             }
 
@@ -461,21 +458,6 @@ const description =
                 background: var(--paper-deep);
             }
 
-            .tbd {
-                display: block;
-                margin: 0 0 0.5rem;
-                color: var(--rust);
-                font-family: "Bowlby One SC", display;
-                font-size: clamp(3rem, 11vw, 6.5rem);
-                letter-spacing: -0.05em;
-                line-height: 0.9;
-            }
-
-            .pending-card {
-                align-self: start;
-                background: var(--orange);
-            }
-
             .page-footer {
                 display: flex;
                 flex-wrap: wrap;
@@ -537,8 +519,7 @@ const description =
                     align-items: start;
                 }
 
-                .prep-grid,
-                .date-grid {
+                .prep-grid {
                     grid-template-columns: minmax(0, 1.3fr) minmax(17rem, 0.7fr);
                 }
 
@@ -572,7 +553,7 @@ const description =
                     <div class="hero-tags" aria-label="Event summary">
                         <span>Keeper's Call</span>
                         <span>Online</span>
-                        <span>Dates T.B.D.</span>
+                        <span>Schedule via Chronos</span>
                     </div>
                 </div>
                 <figure class="hero-art">

@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   readonly PUBLIC_MOVEMBERAPI: string;
+  readonly PUBLIC_CHRONOS_API_URL: string;
 }
 
 interface ImportMeta {

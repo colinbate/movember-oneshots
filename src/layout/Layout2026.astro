@@ -49,9 +49,19 @@ const description =
                 color: var(--ink);
                 background-color: var(--slime);
                 background-image:
-                    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.38) 0 2px, transparent 3px),
-                    radial-gradient(circle at 88% 70%, rgba(23, 25, 18, 0.1) 0 3px, transparent 4px);
-                background-size: 34px 34px, 51px 51px;
+                    radial-gradient(
+                        circle at 10% 18%,
+                        rgba(255, 255, 255, 0.38) 0 2px,
+                        transparent 3px
+                    ),
+                    radial-gradient(
+                        circle at 88% 70%,
+                        rgba(23, 25, 18, 0.1) 0 3px,
+                        transparent 4px
+                    );
+                background-size:
+                    34px 34px,
+                    51px 51px;
                 font-family: "Atkinson Hyperlegible", sans-serif;
                 font-size: 1rem;
                 line-height: 1.65;
@@ -181,7 +191,7 @@ const description =
             .hero h1 {
                 max-width: 8ch;
                 margin: 0;
-                font-size: clamp(3.4rem, 12vw, 7rem);
+                font-size: clamp(2.6rem, 12vw, 7rem);
                 letter-spacing: -0.055em;
                 text-wrap: balance;
             }
@@ -497,7 +507,10 @@ const description =
                 }
 
                 .hero {
-                    grid-template-columns: minmax(23rem, 0.9fr) minmax(0, 1.35fr);
+                    grid-template-columns: minmax(23rem, 0.9fr) minmax(
+                            0,
+                            1.35fr
+                        );
                     min-height: 36rem;
                 }
 
@@ -515,12 +528,18 @@ const description =
                 }
 
                 .intro-grid {
-                    grid-template-columns: minmax(0, 1.5fr) minmax(17rem, 0.7fr);
+                    grid-template-columns: minmax(0, 1.5fr) minmax(
+                            17rem,
+                            0.7fr
+                        );
                     align-items: start;
                 }
 
                 .prep-grid {
-                    grid-template-columns: minmax(0, 1.3fr) minmax(17rem, 0.7fr);
+                    grid-template-columns: minmax(0, 1.3fr) minmax(
+                            17rem,
+                            0.7fr
+                        );
                 }
 
                 .facts {
@@ -536,7 +555,9 @@ const description =
         </style>
     </head>
     <body>
-        <a class="skip-link" href="#main-content">Skip to the adventure</a>
+        <a class="skip-link" href="#main-content">
+            Skip to the adventure
+        </a>
         <div class="page-shell">
             <div class="topbar">
                 <a href="/">← Movember one-shots</a>
@@ -544,8 +565,12 @@ const description =
             </div>
             <header class="hero">
                 <div class="hero-copy">
-                    <p class="eyebrow">A charity tabletop adventure <span>2026</span></p>
-                    <h1>Enterprising <span>Warlocks</span></h1>
+                    <p class="eyebrow">
+                        A charity tabletop adventure <span>2026</span>
+                    </p>
+                    <h1>
+                        Enterprising <span>Warlocks</span>
+                    </h1>
                     <p class="hero-deck">
                         Edenvale needs your help. The skeletons are already on
                         their way down.

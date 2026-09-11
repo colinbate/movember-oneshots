@@ -35,7 +35,6 @@
     let confirmedSessions = $derived.by(() =>
         event
             ? event.sessions
-                  .filter((session) => session.status === "confirmed")
                   .slice()
                   .sort(
                       (left, right) =>
@@ -179,8 +178,8 @@
             <div class="schedule-copy">
                 {#if confirmedSessions.length > 0}
                     <p class="schedule-intro">
-                        Choose one of the confirmed sessions below. Each session runs the
-                        same adventure, so you only need to join one.
+                        The proposed session times are below. Each session runs the
+                        same adventure, so you only need to join one. <a href={signupUrl}>Choose which times work for you.</a>
                     </p>
                     <ol class="session-list">
                         {#each confirmedSessions as session, index (session.startsAt)}

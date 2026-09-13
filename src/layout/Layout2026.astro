@@ -15,7 +15,7 @@ const description =
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link
-            href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700|bowlby-one-sc:400"
+            href="https://fonts.bunny.net/css?family=bowlby-one-sc:400"
             rel="stylesheet"
         />
         <title>{title} — Movember 2026</title>
@@ -62,7 +62,16 @@ const description =
                 background-size:
                     34px 34px,
                     51px 51px;
-                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Ubuntu,
+                    "Helvetica Neue",
+                    Arial,
+                    sans-serif;
                 font-size: 1rem;
                 line-height: 1.65;
             }
@@ -393,7 +402,7 @@ const description =
                 border: var(--line);
                 background: var(--paper);
                 box-shadow: 8px 8px 0 var(--ink);
-                transform: rotate(-0.25deg);
+                transform: rotate(0);
             }
 
             .story-copy p:first-child::first-letter {
@@ -432,7 +441,7 @@ const description =
                 align-self: start;
                 background: var(--blue);
                 color: var(--paper);
-                transform: rotate(-1deg);
+                transform: rotate(0);
             }
 
             .system-name {
@@ -442,6 +451,56 @@ const description =
                 font-family: "Bowlby One SC", display;
                 font-size: clamp(2rem, 5vw, 3rem);
                 line-height: 1;
+            }
+
+            .play-guide {
+                margin-top: 1.3rem;
+                border-top: 2px solid currentColor;
+            }
+
+            .play-guide summary {
+                padding: 0.8rem 0;
+                cursor: pointer;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                list-style: none;
+                text-transform: uppercase;
+            }
+
+            .play-guide summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .play-guide summary::after {
+                float: right;
+                content: "+";
+                font-size: 1.35rem;
+                line-height: 1;
+            }
+
+            .play-guide[open] summary::after {
+                content: "−";
+            }
+
+            .play-guide-copy {
+                padding: 0.1rem 0 0.25rem;
+            }
+
+            .play-guide-copy p {
+                margin: 0 0 1rem;
+                font-size: 0.98rem;
+                line-height: 1.45;
+            }
+
+            .play-guide-copy strong {
+                color: var(--slime);
+            }
+
+            .play-guide-copy .play-guide-reassurance {
+                margin-top: 1.25rem;
+                padding-top: 1rem;
+                border-top: 2px solid currentColor;
+                font-weight: 700;
             }
 
             .checklist {
